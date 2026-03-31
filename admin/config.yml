@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: TU-USUARIO/TU-REPOSITORIO # ⚠️ IMPORTANTE: Cambia "TU-USUARIO" y "TU-REPOSITORIO" por tu cuenta en GitHub
+  branch: main # Rama principal donde se guardan las fotos
+
+media_folder: "img"
+public_folder: "img" # El CMS y la web usarán la misma carpeta img/
+
+collections:
+  - name: "configuracion_galeria"
+    label: "Panel de Galería"
+    description: "Aquí puedes añadir o borrar las fotos que aparecerán en la página principal del portafolio."
+    delete: false # Evitar borrar el archivo base
+    files:
+      - label: "Administrar Fotografías"
+        name: "gallery_data"
+        file: "data/gallery.json"
+        
+        # Una lista de objetos permite añadir muchas obras al mismo archivo
+        fields:
+          - label: "📸 Lista de Obras en Portafolio"
+            name: "galeria"
+            widget: "list"
+            summary: "{{fields.titulo}}" # Título de la obra al contraer la lista
+            fields:
+              - { label: "Seleccionar Imagen", name: "imagen", widget: "image", required: true }
+              - { label: "Título de la Obra", name: "titulo", widget: "string", default: "Nueva Obra" }
+              - { label: "Descripción de la Imagen", name: "descripcion", widget: "text", required: false, default: "" }
