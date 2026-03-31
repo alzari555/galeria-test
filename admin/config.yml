@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU-USUARIO/TU-REPOSITORIO # ⚠️ IMPORTANTE: Cambia "TU-USUARIO" y "TU-REPOSITORIO" por tu cuenta en GitHub
+  repo: alzari555/galeria-test
   branch: main # Rama principal donde se guardan las fotos
 
 media_folder: "img"
